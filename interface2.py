@@ -1,6 +1,5 @@
 import streamlit as st
 import pickle
-from sklearn.feature_extraction.text import TfidfVectorizer
 
 KNNModel=pickle.load(open('knnclassifier.pkl','rb'))
 LRegressionmodel=pickle.load(open('Regressionclassifier.pkl','rb'))
