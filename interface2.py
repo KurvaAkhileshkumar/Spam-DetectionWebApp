@@ -1,12 +1,11 @@
 import streamlit as st
 import pickle
 
-
+KNNModel=pickle.load(open('knnclassifier.pkl','rb'))
+LRegressionmodel=pickle.load(open('Regressionclassifier.pkl','rb'))
+vectorizer=pickle.load(open('Vectorizer.pickle','rb'))
 
 def emailPrediction(input_data):
-    KNNModel=pickle.load(open('knnclassifier.pkl','rb'))
-    LRegressionmodel=pickle.load(open('Regressionclassifier.pkl','rb'))
-    vectorizer=pickle.load(open('Vectorizer.pickle','rb'))
     input_data=[input_data]    
     email_feautures=vectorizer.transform(input_data)
     ans=KNNModel.predict(email_feautures)
